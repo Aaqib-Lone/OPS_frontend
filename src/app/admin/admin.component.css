@@ -1,0 +1,23 @@
+.main-container {
+    display: flex;
+  }
+  
+  .main-container .sidenav {
+    width: 230px;
+    min-width: 200px;
+    min-height: calc(100vh - 70px);
+    background:linear-gradient(90deg,rgba(176,42,79,1)0%,rgba(52,38,99,1)100%);
+    color: #fff;
+    box-shadow: 5px 5px 5px #939393;
+  }
+  
+   /* @media only screen and (max-width: 1300px) {
+    .main-container .sidenav {
+      width: 100px;
+      min-width: 100px;
+    }
+  } */
+  
+  .main-container .main {
+    padding: 30px;
+  }

@@ -1,0 +1,413 @@
+
+<app-navbar></app-navbar>
+<div class="main-container">
+    <div class="sidenav">
+        <app-sidenav></app-sidenav>
+    </div>
+    
+
+    <div class="main">
+
+        
+        <!-- <div class="list" *ngFor="let i=index, let ob of list">
+            
+            <i id="icon" class={{ob.icon}}></i>
+            <h3>{{ob.name}}</h3>
+            <i class="fa fa-chevron-circle-down" (click)="change(ob.case)"></i>
+            
+        </div> -->
+        <div class="list" (click)="change('personal')">
+            
+            <i id="icon" class="fa fa-user-circle"></i>
+            <h3>Personal Details</h3>
+            <i class="fa fa-chevron-circle-down" (click)="change('personal')"></i>
+            
+        </div>
+        <div class="list" id="nominee" (click)="change('nominee')" [style.margin-top.px]="nomineetop">
+            
+            <i id="icon" class="fa fa-users"></i>
+            <h3>Nominee Details</h3>
+            <i class="fa fa-chevron-circle-down" (click)="change('nominee')"></i>
+            
+        </div>
+        <div class="list" (click)="change('medical')" [style.margin-top.px]="medicaltop" >
+            
+            <i id="icon" class="fa fa-user-md"></i>
+            <h3>Medical History</h3>
+            <i class="fa fa-chevron-circle-down" (click)="change('medical')"></i>
+            
+        </div>
+        <div class="list" (click)="change('bank')" [style.margin-top.px]="banktop">
+            
+            <i id="icon" class="fa fa-bank"></i>
+            <h3>Bank Details</h3>
+            <i class="fa fa-chevron-circle-down" (click)="change('bank')"></i>
+            
+        </div>
+        
+
+        
+        <div [ngSwitch]="selectedQue">
+            
+            
+            
+            <div   [style.margin-top.px]="personalDetailsMarginTop" class="personal_details" *ngSwitchCase="'personal'">
+            <div>
+                
+                <h1>Personal Details:</h1>
+            </div>
+            
+            <div class="data">
+                <label>Full Name:</label>
+                <div class="name">
+                    <select [(ngModel)]=" selectedName"  >
+                        <option value="mr">Mr.</option>
+                        <option value="miss">Miss.</option>
+                        <option value="mrs">Mrs.</option>
+                    </select>
+                    <input type="text" />
+                </div>
+            </div>
+            <div class="data">
+                <label>Address:</label>
+                <input type="text" />
+            </div>
+            <div class="data">
+                <label>Phone Number:</label>
+                <input type="text" />
+            </div>
+            <div class="data">
+                <label>Email ID:</label>
+                <input type="email" />
+            </div>
+            <div class="data">
+                <div class="dob">
+                    <label>Date of Birth:</label>
+                    <input type="date" />
+                    <label>Age:</label>
+                    <input type="number" />
+                </div>
+            </div>
+            <div class="data">
+                <label>Gender:</label>
+                <div class="gender">
+                    <input type="radio" name="gender"  value="Male"/>
+                    <label for="male">Male</label>
+                    <input type="radio"  name="gender" value="Female"/>
+                    <label for="female">Female</label>
+                    <input type="radio"  name="gender" value="Other"/>
+                    <label for="other">Other</label>
+                    
+                    
+                </div>
+            </div>
+            <div class="data">
+                <label>Residency:</label>
+                <div class="residency">
+                    <input type="radio" name="residency"  value="Indian"/>
+                    <label for="indian">Indian</label>
+                    <input type="radio"  name="residency" value="NRI"/>
+                    <label for="nri">NRI</label>
+                </div>
+            </div>
+            <div class="data">
+                <label>Document:</label>
+                <div class="document">
+                    <select>
+                        <!-- <option value="aadhar">Aadhar Card</option> -->
+                        <option value="pan">Pan Card</option>
+                        <option value="dl">Driving License</option>
+                        <option value="voterid">Voter ID</option>
+                        <option value="passport">Passport</option>
+                        
+                    </select>
+                    <input type="file"/>
+                    </div>
+            </div>
+            
+        </div>
+        
+        <div [style.margin-top.px]="nomineeDetailsMarginTop" class="nominee_details" *ngSwitchCase="'nominee'">
+            <div>
+                
+                <h1>Nominee Details:</h1>
+            </div>
+            
+            <div class="data">
+                <label>Full Name:</label>
+                <div class="name">
+                    <select [(ngModel)]=" selectedName"  >
+                        <option value="mr">Mr.</option>
+                        <option value="miss">Miss.</option>
+                        <option value="mrs">Mrs.</option>
+                    </select>
+                    <input type="text" />
+                </div>
+            </div>
+
+            <div class="data">
+                <label>Relation:</label>
+                <div class="relation">
+                    <select [(ngModel)]="selectedRelation"  >
+                        <option value="father">Father</option>
+                        <option value="mother">Mother</option>
+                        <option value="spouse">Spouse</option>
+                        <option value="sister">Sister</option>
+                        <option value="brother">Brother</option>
+                        <option value="daughter">Daughter</option>
+                        <option value="son">Son</option>
+                    </select>
+                </div>
+            </div>
+            <div class="data">
+                <label>Address:</label>
+                <input type="text" />
+            </div>
+            <div class="data">
+                <label>Phone Number:</label>
+                <input type="text" />
+            </div>
+            <div class="data">
+                <label>Email ID:</label>
+                <input type="email" />
+            </div>
+            <div class="data">
+                <label>Gender:</label>
+                <div class="gender">
+                    <input type="radio" name="gender"  value="Male"/>
+                    <label for="male">Male</label>
+                    <input type="radio"  name="gender" value="Female"/>
+                    <label for="female">Female</label>
+                    <input type="radio"  name="gender" value="Other"/>
+                    <label for="other">Other</label>
+                    
+                    
+                </div>
+            </div>
+            <div class="data">
+                <div class="dob">
+                    <label>Date of Birth:</label>
+                    <input type="date" />
+                    <label>Age:</label>
+                    <input type="number" />
+                </div>
+            </div>
+            <div class="data">
+                <label>Document:</label>
+                <div class="document">
+                    <select>
+                        <!-- <option value="aadhar">Aadhar Card</option> -->
+                        <option value="pan">Pan Card</option>
+                        <option value="dl">Driving License</option>
+                        <option value="voterid">Voter ID</option>
+                        <option value="passport">Passport</option>
+                        
+                    </select>
+                    <input type="file"/>
+                    </div>
+            </div>
+            
+            
+            
+        </div>
+        
+        <div [style.margin-top.px]="bankDetailsMarginTop" class="bank_details" *ngSwitchCase="'bank'">
+            <div>
+                
+                <h1>Bank Details:</h1>
+            </div>
+            <div class="data">
+                <label>Source Code:</label>
+                <input type="text" />
+            </div>
+            <div class="data">
+                <label>Account Holder Name:</label>
+                <div class="name">
+                    <select [(ngModel)]=" selectedName"  >
+                        <option value="mr">Mr.</option>
+                        <option value="miss">Miss.</option>
+                        <option value="mrs">Mrs.</option>
+                    </select>
+                    <input type="text" />
+                </div>
+            </div>
+            <div class="data">
+                <label>IFSC Code:</label>
+                <input type="text" />
+            </div>
+            <div class="data">
+                <label>Location:</label>
+                <input type="text" />
+            </div>
+            <div class="data">
+                <label>Account Number:</label>
+                <input type="text" />
+            </div>
+            <div class="data">
+                <label>Re-Enter Account Number:</label>
+                <input type="text" />
+            </div>
+            
+            
+        </div>
+        
+        <div [style.margin-top.px]="medicalDetailsMarginTop" class="medical_history" *ngSwitchCase="'medical'">
+            <div>
+                
+                <h1>Medical History:</h1>
+            </div>
+            <div class="data">
+                <label>Height:</label>
+                <div class="height">
+                    <label>Foot:</label>
+                    <input type="number" />
+                        <label>Inches:</label>
+                        <input type="number" />
+                    </div>
+                </div>
+                
+                <div class="data">
+                <label>Weight:</label>
+                <input type="number" />
+            </div>
+            <div class="data">
+                <label>Quetions related to your medical history:</label>
+                <br>
+                <div >
+                    <div class="medical_que">
+                        <div class="que">
+                            <h4>Have you diagnosed for Diabetes, high blood pressure</h4>
+                        </div>
+                        <div class="answer">
+                            <input type="radio" name="answer"  value="Yes"/>
+                            <label for="yes">Yes</label>
+                            <input type="radio"  name="answer" value="No"/>
+                            <label for="no">No</label>
+                        </div>
+                    </div>
+                    <div class="medical_que">
+                        <div class="que">
+                            <h4>Have you diagnosed for chest pain, heart attack, heart disease or any other disorder of the circulatory system</h4>
+                        </div>
+                        <div class="answer">
+                            <input type="radio" name="answer"  value="Yes"/>
+                            <label for="yes">Yes</label>
+                            <input type="radio"  name="answer" value="No"/>
+                            <label for="no">No</label>
+                        </div>
+                    </div>
+                    <div class="medical_que">
+                        <div class="que">
+                            <h4>Have you diagnosed Stroke, paralysis, disorder of the brain/ nervous system.</h4>
+                        </div>
+                        <div class="answer">
+                            <input type="radio" name="answer"  value="Yes"/>
+                            <label for="yes">Yes</label>
+                            <input type="radio"  name="answer" value="No"/>
+                            <label for="no">No</label>
+                        </div>
+                    </div>
+                    <div class="medical_que">
+                        <div class="que">
+                            <h4>Have you diagnosed for HIV infection, AIDS</h4>
+                        </div>
+                        <div class="answer">
+                            <input type="radio" name="answer"  value="Yes"/>
+                            <label for="yes">Yes</label>
+                            <input type="radio"  name="answer" value="No"/>
+                            <label for="no">No</label>
+                        </div>
+                    </div>
+                    <div class="medical_que">
+                        <div class="que">
+                            <h4>Have you diagnosed for Cancer, tumor, growth or cyst of any kind</h4>
+                        </div>
+                        <div class="answer">
+                            <input type="radio" name="answer"  value="Yes"/>
+                            <label for="yes">Yes</label>
+                            <input type="radio"  name="answer" value="No"/>
+                            <label for="no">No</label>
+                        </div>
+                    </div>
+                    <div class="medical_que">
+                        <div class="que">
+                            <h4>Have you diagnosed Any genitourinary of kidney discover,Hepatitis B/C or any other liver disease</h4>
+                        </div>
+                        <div class="answer">
+                            <input type="radio" name="answer"  value="Yes"/>
+                            <label for="yes">Yes</label>
+                            <input type="radio"  name="answer" value="No"/>
+                            <label for="no">No</label>
+                        </div>
+                    </div>
+                    <div class="medical_que">
+                        <div class="que">
+                            <h4>Have you diagnosed Any digestive disorder (ulcer, colitis etc), any disease of the gall bladder, spleen, any blood disorder of any other gland (e.g. Thyroid etc) or any musculoskeletal disorder</h4>
+                        </div>
+                        <div class="answer">
+                            <input type="radio" name="answer"  value="Yes"/>
+                            <label for="yes">Yes</label>
+                            <input type="radio"  name="answer" value="No"/>
+                            <label for="no">No</label>
+                        </div>
+                    </div>
+                    <div class="medical_que">
+                        <div class="que">
+                            <h4>Have you diagnosed Asthma, Tuberculosis, Pneumonia, or any other disease of the lung</h4>
+                        </div>
+                        <div class="answer">
+                            <input type="radio" name="answer"  value="Yes"/>
+                            <label for="yes">Yes</label>
+                            <input type="radio"  name="answer" value="No"/>
+                            <label for="no">No</label>
+                        </div>
+                    </div>
+                    <div class="medical_que">
+                        <div class="que">
+                            <h4>Have you diagnosed Mental, Psychiatric or nervous disorder</h4>
+                        </div>
+                        <div class="answer">
+                            <input type="radio" name="answer"  value="Yes"/>
+                            <label for="yes">Yes</label>
+                            <input type="radio"  name="answer" value="No"/>
+                            <label for="no">No</label>
+                        </div>
+                    </div>
+                    <div class="medical_que">
+                        <div class="que">
+                            <h4>Do you consume more than 10 cigarattes / bidis per day or chew more than 5 pouches of tobacco per day?</h4>
+                        </div>
+                        <div class="answer">
+                            <input type="radio" name="answer"  value="Yes"/>
+                            <label for="yes">Yes</label>
+                            <input type="radio"  name="answer" value="No"/>
+                            <label for="no">No</label>
+                        </div>
+                    </div>
+                    <div class="medical_que">
+                        <div class="que">
+                            <h4>Have you received the COVID vaccine?</h4>
+                        </div>
+                        <div class="answer">
+                            <input type="radio" name="answer"  value="Yes"/>
+                            <label for="yes">Yes</label>
+                            <input type="radio"  name="answer" value="No"/>
+                            <label for="no">No</label>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div>
+        
+    </div>
+    
+</div>
+</div>
+    
+    <!-- <div class="list">
+        <h3>Personal Details</h3>
+    </div> -->

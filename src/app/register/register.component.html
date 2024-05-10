@@ -1,0 +1,26 @@
+<div class='register'>
+    <div class='register-left'>
+        <img src="../../assets/logo.png" class="sbilifelogo" alt='NO image found'/>
+        <h1>Welcome to SBI Life<br><span>Insurance</span></h1>
+    </div>
+    <div class='register-right'>
+        <form>
+            <input class='register-input' id="name" [(ngModel)]="user.name" name="name" type='text' placeholder='Enter name'/>
+            <input class='register-input' id="id" [(ngModel)]="user.id" name="id"  type='text' placeholder='Enter ID'/>
+            <input class='register-input' id="contact" [(ngModel)]="user.contact" name="contact"  type='text' placeholder='Enter Contact Number'/>
+            <input class='register-input' id="email" [(ngModel)]="user.email" name="email"  type='email' placeholder='Enter Email'/>
+            <input class='register-input' id="password" [(ngModel)]="user.password" name="password"   type='password' placeholder='Enter Password'/>
+            <input class='register-input' id="cpassword" type='password' [(ngModel)]="user.cpassword" name="cpassword"  placeholder='Re-Enter Password'/>
+            <!-- <button class='register-btn' href='home.html'>register</button> -->
+            <!-- <a href="home.html">
+                <button class='register-btn'>register</button>
+            </a> -->
+            <button class="register-btn" (click)="register()">Register</button>
+            
+            <div class='no-account'>
+                <a  style='text-decoration: none;'><h5>Already have account?</h5></a>
+                <button class="login-btn" (click)="goToLogin()" >Login</button>
+            </div>
+        </form>
+    </div>
+</div>

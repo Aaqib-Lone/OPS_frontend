@@ -1,0 +1,23 @@
+<div class='login'>
+    <div class='login-left'>
+        <img src="../../assets/logo.png" class="sbilifelogo" alt='NO image found'/>
+        <h1>Welcome to SBI Life<br><span>Insurance</span></h1>
+    </div>
+    <div class='login-right'>
+        <form>
+            <img class='login-img' src="../../assets/login.png" alt='No image found'/>
+            <input class='login-input' type='text' name="username"  placeholder='Enter ID' [(ngModel)]="data.username"/>
+            <input class='login-input' type='password' name="passwordi" placeholder='Enter Password' [(ngModel)]="data.password"/>
+            <!-- <button class='login-btn' href='home.html'>Login</button> -->
+            <!-- <a href="home.html">
+                <button class='login-btn'>Login</button>
+            </a> -->
+            <button class="login-btn" (click)="loginHere()">Login</button>
+            
+            <div class='no-account'>
+                <a  style='text-decoration: none;'><h5>Don't have account?</h5></a>
+                <button class="register-btn" (click)="goToRegister()">Register</button>
+            </div>
+        </form>
+    </div>
+</div>
